@@ -18,9 +18,10 @@ func app_main() {
   print("PI= \(format(double: 3.14))")
   printFloat(3.14)
   
-  // TODO: Adjust by the number of pixels on your LED light strip or matrix
+  // TODO: Adjust by the GPIO pin and number of pixels on your LED light strip or matrix
   let n = 256
   let ledStrip = LedStrip(gpioPin: 0, maxLeds: n)
+  
   ledStrip.clear()
 
   var color: LedStrip.Color = .lightWhite
@@ -40,9 +41,9 @@ func app_main() {
     colors.insert(contentsOf: newColors, at: 0)
 
     // Update all the colors
-    for y: Int in 0 ..< 16 {
-      for x in 0 ..< 16 {
-        let index = y * 16 + x
+    for y: Int in 0 ..< ledPerRow {
+      for x in 0 ..< ledPerRow {
+        let index = y * ledPerRow + x
         ledStrip.setPixel(index: index, color: colors[index])
       }
     }
