@@ -1,0 +1,15 @@
+{
+    "idf.adapterTargetName": "esp32c6",
+    "idf.port": "/dev/tty.usbmodem2101",
+    "idf.openOcdConfigs": [
+        "board/esp32c6-builtin.cfg"
+    ],
+    "idf.flashType": "UART",
+
+    "swift.swiftEnvironmentVariables": {
+        "DEVELOPER_DIR": "/Applications/Xcode.app"
+    },
+    "swift.path": "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2024-09-04-a.xctoolchain/usr/bin",
+    "lldb.library": "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2024-09-04-a.xctoolchain/System/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native"
+}
