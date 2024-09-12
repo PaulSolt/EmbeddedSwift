@@ -104,3 +104,24 @@ If you're on macOS, you can probably use this C++ config file as is, so I'll inc
     "version": 4
 }
 ```
+
+
+## Code, Build, and Run
+
+After you configure all these steps you should now have code completion working and you should be able to build, flash, and monitor your ESP32 directly from Visual Studio Code.
+
+You should also be able to jump to definition.
+
+After you write your code, you can run it using one command.
+
+1. Set the serial port of your device: Press `F1` (or `Command + Shift + P`), type ESP-IDF: Select Port to Use: and choose the serial port your device is connected. (Connect the USB if not connected)
+2. **NOTE**: To stop monitoring, press `Control + ]`. (I don't always have to stop it if I re-run the `ESP Build Flash Monitor` command, but it didn't always work at first)
+3. On subsequent runs Visual Studio Code remembers your last command, so that makes it easy to re-build and run the code.
+
+If you have any questions, tips, or suggestions reach out on X: [@PaulSolt](https://X.com/PaulSolt).
+
+Alternatively, you can use idf.py from Terminal:
+
+```
+idf.py build flash monitor
+```
