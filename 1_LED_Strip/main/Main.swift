@@ -21,7 +21,7 @@ func app_main() {
   // TODO: Adjust by the GPIO pin and number of pixels on your LED light strip or matrix
   let n = 256
   let ledStrip = LedStrip(gpioPin: 0, maxLeds: n)
-  
+
   ledStrip.clear()
 
   var color: LedStrip.Color = .lightWhite
@@ -61,7 +61,7 @@ func app_main() {
     }
     counter += 1
 
-    let blinkDelayMs: UInt32 = 33
+    let blinkDelayMs: UInt32 = 66
     vTaskDelay(blinkDelayMs / (1000 / UInt32(configTICK_RATE_HZ)))
   }
 }
