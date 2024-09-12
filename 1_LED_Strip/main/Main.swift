@@ -29,7 +29,7 @@ func app_main() {
   var counter = 0
   
   let ledPerRow = 16
-  let rows = 4
+  let rows = 5
 
   // Animation loop
   while true {
@@ -49,7 +49,7 @@ func app_main() {
     ledStrip.refresh()
 
     // Alternate color every X rows
-    if counter > rows {
+    if counter >= rows {
       flip.toggle()
       counter = 0
     }
