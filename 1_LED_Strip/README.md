@@ -118,10 +118,11 @@ After you write your code, you can run it using one command.
 2. **NOTE**: To stop monitoring, press `Control + ]`. (I don't always have to stop it if I re-run the `ESP Build Flash Monitor` command, but it didn't always work at first)
 3. On subsequent runs Visual Studio Code remembers your last command, so that makes it easy to re-build and run the code.
 
-If you have any questions, tips, or suggestions reach out on X: [@PaulSolt](https://X.com/PaulSolt).
-
 Alternatively, you can use idf.py from Terminal:
 
 ```
 idf.py build flash monitor
 ```
+
+If you have any questions, tips, or suggestions reach out on X: [@PaulSolt](https://X.com/PaulSolt).
+
