@@ -72,21 +72,22 @@ set(CMAKE_Swift_COMPILATION_MODE_DEFAULT wholemodule)
 set(CMAKE_Swift_COMPILATION_MODE wholemodule)
 enable_language(Swift)
 
+# Automatically add all Swift files from the main folder (recursively)
+file(GLOB_RECURSE SWIFT_SOURCES "*.swift")
+message(SWIFT_SOURCES="${SWIFT_SOURCES}")
 
-# List of Swift source files to build.
+# This can automatically add new files, but you need to modify CMakeLists.txt to trigger CMake to update itself
+# 1. Otherwise you will have build errors (unless you clean the entire build folder)
+# 2. The alternative is to always add the files yourself like the example below
+target_sources(${COMPONENT_LIB}
+    PRIVATE
+    ${SWIFT_SOURCES}
+)
+
+# List of Swift source files to build (manually add new files)
 # target_sources(${COMPONENT_LIB}
 #     PRIVATE
 #     Main.swift
 #     LedStrip.swift
 #     Format.swift    # Add any new files like Format.swift to the list
 # )
-
-# Find all Swift files in the main folder (recursively)
-file(GLOB_RECURSE SWIFT_SOURCES "./*.swift")
-message(SWIFT_SOURCES="${SWIFT_SOURCES}")
-
-${SWIFT_SOURCES} 
-target_sources(${COMPONENT_LIB}
-    PRIVATE
-    ${SWIFT_SOURCES}
-)
